@@ -1,0 +1,5 @@
+{
+  "role-name" : "ml-graphql-express-internal",
+  "description" : "Internal role used for amping",
+  "role" : [ "ml-graphql-express-writer" ]
+}
