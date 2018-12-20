@@ -44,6 +44,10 @@ class Token {
     this.next = null;
     this.value = value;
   }
+
+  getTokenDesc() {
+    return this.value ? `${this.kind} "${this.value}"` : this.kind;
+  }
 }
 
 class Lexer {
