@@ -1,4 +1,36 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "com.marklogic:marklogic-unit-test-client:0.12.0"
+  }
+}
+
 plugins 
 {
     id "com.marklogic.ml-gradle" version "3.10.0"
+}
+
+repositories {
+  jcenter()
+  maven { url "http://developer.marklogic.com/maven2/" }
+}
+
+configurations {
+  mlcp
+}
+
+dependencies {
+  mlRestApi "com.marklogic:marklogic-unit-test-modules:0.12.0"
+  mlcp "com.marklogic:mlcp:9.0.7"
+  mlcp files("mlcp")
+}
+
+task loadData(type: com.marklogic.gradle.task.MlcpTask) {
+  classpath = configurations.mlcp
+  command = "IMPORT"
+  database = mlAppConfig.contentDatabaseName
+  input_file_path = "data"
+  output_collections = "starwars"
 }

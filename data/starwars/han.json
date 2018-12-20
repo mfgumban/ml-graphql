@@ -1,0 +1,15 @@
+{
+  "id": "1002",
+  "name": "Han Solo",
+  "friends": [
+    "1000",
+    "1003",
+    "2001"
+  ],
+  "appearsIn": [
+    "NEWHOPE",
+    "EMPIRE",
+    "JEDI"
+  ],
+  "race": "Human"
+}
