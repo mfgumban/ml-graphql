@@ -1,12 +1,12 @@
 'use strict';
 
 const check = require('../check.sjs');
-const syntaxError = require('../error.sjs').syntaxError;
+const syntaxError = require('../error/error.sjs').syntaxError;
 const blockStringValue = require('blockStringValue.sjs').blockStringValue;
 const Source = require('source.sjs').Source;
 
 const charCodeAt = String.prototype.charCodeAt;
-const slice = Array.prototype.slice;
+const slice = String.prototype.slice;
 
 const TokenKind = Object.freeze({
   SOF: '<SOF>',

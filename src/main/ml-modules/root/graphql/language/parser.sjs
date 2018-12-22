@@ -1,7 +1,7 @@
 'use strict';
 
 const check = require('../check.sjs');
-const syntaxError = require('../error.sjs').syntaxError;
+const syntaxError = require('../error/error.sjs').syntaxError;
 const Source = require('source.sjs').Source;
 const ast = require('ast.sjs');
 const lxr = require('lexer.sjs');

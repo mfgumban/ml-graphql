@@ -21,5 +21,6 @@ function syntaxError(source, position, description) {
 }
 
 module.exports = {
+  GraphQLError: GraphQLError,
   syntaxError: syntaxError
 }
