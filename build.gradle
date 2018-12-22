@@ -27,10 +27,27 @@ dependencies {
   mlcp files("mlcp")
 }
 
-task loadData(type: com.marklogic.gradle.task.MlcpTask) {
+task loadSchemas(type: com.marklogic.gradle.task.MlcpTask) {
   classpath = configurations.mlcp
   command = "IMPORT"
   database = mlAppConfig.contentDatabaseName
-  input_file_path = "data"
+  input_file_path = "data/schemas"
+  input_file_type = "documents"
+  document_type = "text"
+  output_uri_replace = ".+?/data,''"
+  output_collections = "schemas"
+}
+
+task loadStarWarsData(type: com.marklogic.gradle.task.MlcpTask) {
+  classpath = configurations.mlcp
+  command = "IMPORT"
+  database = mlAppConfig.contentDatabaseName
+  input_file_path = "data/starwars"
+  input_file_type = "documents"
+  output_uri_replace = ".+?/data,''"
   output_collections = "starwars"
+}
+
+task loadData(type: GradleBuild) {
+  tasks = ['loadSchemas', 'loadStarWarsData']
 }
