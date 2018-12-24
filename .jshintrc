@@ -3,6 +3,9 @@
   "globalstrict": true,
   "globals": {
     "require": true,
-    "module": true
+    "module": true,
+    "fn": true,
+    "xdmp": true,
+    "xs": true
   }
 }
